@@ -310,6 +310,21 @@
       color: white;
       text-decoration: underline;
     }
+
+    .floating-img-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floating-social-right a:hover .floating-img-icon {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 102, 0, 0.7);
+}
+
     .follow-text {
       margin-top: 2.5rem;
       font-weight: 700;
@@ -381,6 +396,37 @@
       transform: scale(1.1);
     }
 
+
+    /* Floating Social Icon on Right - Added */
+    .floating-social-right {
+      position: fixed;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 999;
+    }
+    .floating-social-right a {
+      color: white;
+      background: linear-gradient(135deg, #0015ff, #000080);
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+      transition: all 0.3s ease;
+      font-size: 1.25rem;
+    }
+    .floating-social-right a:hover {
+      background: linear-gradient(135deg, #0000cc, #00004d);
+      transform: scale(1.1);
+    }
+
     /* Footer */
     footer {
       background: #1b1b1b;
@@ -424,6 +470,14 @@
     <a href="https://www.tiktok.com/@bruneikreatif" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
     <a href="https://www.facebook.com/bruneikreatif" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
   </div>
+
+<!-- Floating Social Icon - Right with Image -->
+<div class="floating-social-right" aria-label="Extra Link">
+  <a href="snc.html" target="_blank" rel="noopener noreferrer" aria-label="Visit SWOT Network Company website" role="link">
+    <img src="img/snc logo black.jpg" alt="Go to SWOT Network Company" class="floating-img-icon" />
+  </a>
+</div>
+
 
   <!-- Welcome Banner -->
   <section class="welcome-banner" role="banner">

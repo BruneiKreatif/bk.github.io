@@ -181,28 +181,28 @@ body.light-mode .floating-social-right a {
       text-align: center;
     }
 
-.logo,
-.floating-logo {
-  transition: filter 0.3s ease, opacity 0.3s ease;
-}
-
-.logo {
-  object-fit: contain;
-  object-position: center;
-  background-color: transparent;
+#toggle-theme {
+  display: inline-block;
+  padding: 0;
+  margin: 0 auto;
+  line-height: 0;
 }
 
 .logo {
   width: 250px;
-  height: 250px;
-  object-fit: contain; /* prevents cropping */
+  height: auto;
+  object-fit: contain;
   object-position: center;
-  margin-bottom: 3rem;
-      display: inline-block;
-      cursor: pointer;
+  margin: 2rem auto 1.5rem auto;
+  display: block;
+  vertical-align: middle;
+  line-height: 0;
+  padding: 0;
+  border: none;
   background-color: transparent;
   transition: filter 0.3s ease, opacity 0.3s ease;
 }
+
 
 .floating-logo {
   width: 45px;
@@ -388,7 +388,7 @@ body.light-mode .floating-social-right a {
   <main role="main">
     <!-- Main Logo -->
     <a href="#" id="toggle-theme" aria-label="Toggle light and dark theme">
-      <img src="../img/snc logo white new.png" alt="SWOT Network Company Logo" class="logo" id="main-logo" loading="lazy"/>
+      <img src="../img/snc logo white test.png" alt="SWOT Network Company Logo" class="logo" id="main-logo" loading="lazy"/>
     </a>
 
     <!-- Website Sections -->
@@ -459,10 +459,10 @@ body.light-mode .floating-social-right a {
     document.body.classList.toggle('light-mode');
 
     if (document.body.classList.contains('light-mode')) {
-      mainLogo.src = '../img/snc logo black.jpg';  // light mode logo
+      mainLogo.src = '../img/snc logo black test.png';  // light mode logo
       floatingLogo.src = '../img/bk logo with black bg.png'; // light mode floating logo
     } else {
-      mainLogo.src = '../img/snc logo white new.png';  // dark mode logo
+      mainLogo.src = '../img/snc logo white test.png';  // dark mode logo
       floatingLogo.src = '../img/bk logo with white bg.jpg'; // dark mode floating logo
     }
   });

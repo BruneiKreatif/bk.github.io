@@ -8,32 +8,12 @@
     <priority>1.0</priority>
   </url>
 
-<url>
-  <loc>https://bruneikreatif.com/swotnetworkcompany/</loc>
-  <lastmod>2025-08-01</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
-
-  <!-- About Us (included in homepage as a section) -->
+  <!-- SWOT Network Company Page -->
   <url>
-    <loc>https://bruneikreatif.com/about-title</loc>
-    <lastmod>2025-07-22</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Content of the Week -->
-  <url>
-    <loc>https://bruneikreatif.com/content-title</loc>
-    <lastmod>2025-07-22</lastmod>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Social Media Section -->
-  <url>
-    <loc>https://bruneikreatif.com/social-title</loc>
-    <lastmod>2025-07-22</lastmod>
-    <priority>0.6</priority>
+    <loc>https://bruneikreatif.com/swotnetworkcompany/</loc>
+    <lastmod>2025-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
 </urlset>

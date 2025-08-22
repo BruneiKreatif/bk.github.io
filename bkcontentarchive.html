@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brunei Kreatif | Content Archive</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="img/BK logo no background favicon.png" type="image/png" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora&family=Poppins&display=swap" rel="stylesheet" />
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'" />
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background: #f8f9fa;
+      color: #333;
+    }
+    h1,h2,h3,h4,h5 { font-family: 'Lora', serif; }
+
+    /* Welcome Banner */
+    .welcome-banner {
+      background: linear-gradient(135deg, #0015ff, #000080);
+      color: white;
+      padding: 4rem 1rem;
+      text-align: center;
+      font-size: 1.75rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    @media (min-width:768px){.welcome-banner{font-size:2.5rem;padding:60px 20px;}}
+    .welcome-text { font-weight:700; letter-spacing:1px; animation: fadeInDown 1s ease; }
+    @keyframes fadeInDown{from{opacity:0;transform:translateY(-30px);} to{opacity:1;transform:translateY(0);} }
+
+    /* Archive Section */
+    .archive-section { padding:3rem 1rem; }
+    .archive-card {
+      background:#fff;
+      box-shadow:0 6px 12px rgba(0,0,0,0.1);
+      border-radius:12px;
+      overflow:hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom:2rem;
+    }
+    .archive-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+    .archive-card img {
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    .archive-card-body { padding:1.5rem; }
+    .archive-card-body h4 {
+      margin-bottom:0.5rem; 
+      color:#0015ff; 
+      font-size:1.25rem; /* smaller size */
+    }
+    .archive-card-body p { color:#444; line-height:1.6; }
+
+    /* Floating Social Icons */
+    .floating-social, .floating-social-right {
+      position: fixed; top:50%; transform:translateY(-50%);
+      display:flex; flex-direction:column; gap:15px; z-index:999;
+    }
+    .floating-social { left:15px; }
+    .floating-social-right { right:15px; }
+    .floating-social a, .floating-social-right a {
+      color:white; background:linear-gradient(135deg,#0015ff,#000080);
+      width:45px;height:45px;border-radius:50%; display:flex; align-items:center; justify-content:center;
+      text-decoration:none; box-shadow:0 4px 10px rgba(0,0,0,0.25); transition: all 0.3s ease;
+    }
+    .floating-social a:hover, .floating-social-right a:hover { background:linear-gradient(135deg,#0000cc,#00004d); transform:scale(1.1);}
+    .floating-img-icon { width:40px;height:40px;border-radius:50%;object-fit:cover; box-shadow:0 0 5px rgba(0,0,0,0.3); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .floating-social-right a:hover .floating-img-icon { transform:scale(1.1); box-shadow:0 0 10px rgba(255,102,0,0.7); }
+
+    /* Footer */
+    footer {
+      background:#1b1b1b; color:#ccc;
+      padding:1rem 2.5rem; display:flex; justify-content:space-between; align-items:center; font-size:0.95rem; font-weight:500;
+      flex-wrap:wrap;
+    }
+    @media(max-width:767px){footer{flex-direction:column;text-align:center;gap:0.5rem;}}
+
+    /* Responsive Cards Grid */
+    .archive-row { display:flex; flex-wrap:wrap; gap:2rem; justify-content:center; }
+    .archive-row .col-md-4 { flex:1 1 300px; }
+
+    /* Gradient Button */
+    .content-btn {
+      background: linear-gradient(135deg, #0015ff, #000080);
+      border: none;
+      font-size: 1.1rem;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    .content-btn:hover { transform: scale(1.05); opacity: 0.9; }
+
+    /* Center Back Button */
+    .back-btn-container { text-align:center; margin-top:2rem; }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Social -->
+  <div class="floating-social">
+    <a href="https://www.instagram.com/bruneikreatif/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.tiktok.com/@bruneikreatif" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="https://www.facebook.com/bruneikreatif" target="_blank"><i class="fab fa-facebook-f"></i></a>
+  </div>
+
+  <div class="floating-social-right">
+    <a href="./swotnetworkcompany"><img src="img/snc logo black.jpg" alt="Go to SWOT Network Company" class="floating-img-icon"/></a>
+  </div>
+
+  <!-- Welcome Banner -->
+  <section class="welcome-banner"><h1 class="welcome-text">CONTENT ARCHIVE</h1></section>
+
+  <!-- Archive Section -->
+  <section class="archive-section container">
+    <div class="archive-row">
+
+<div class="col-md-4">
+        <div class="archive-card">
+          <img src="img/example-content2.jpg" alt="July 2025 Content">
+          <div class="archive-card-body">
+            <h4>July 2025</h4>
+            <p>Past campaigns and creative content from July 2025.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="archive-card">
+          <img src="img/BigMac with wordings.gif" alt="August 2025 Content">
+          <div class="archive-card-body">
+            <h4>August 2025</h4>
+            <p>Our featured content and campaigns for August 2025.</p>
+          </div>
+        </div>
+      </div>
+
+      
+
+    </div>
+
+    <!-- Back Button -->
+    <div class="back-btn-container">
+      <a href="https://bruneikreatif.com" 
+         class="btn btn-lg px-4 py-2 rounded-pill text-white shadow content-btn">
+         Back
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-left">POWERED BY SNC</div>
+    <div class="footer-right">Brunei Kreatif</div>
+  </footer>
+
+  <!-- Smooth Scroll -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+      anchor.addEventListener("click",function(e){
+        e.preventDefault();
+        const target=document.querySelector(this.getAttribute("href"));
+        if(target){target.scrollIntoView({behavior:"smooth",block:"start"});}
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -387,6 +387,28 @@
       }
     }
     
+/* Gradient Button Style */
+.content-btn {
+  background: linear-gradient(135deg, #0015ff, #000080); /* matches your welcome banner */
+  border: none;
+  font-size: 1.1rem;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.content-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Mobile optimization */
+@media (max-width: 576px) {
+  .content-btn {
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+}
   </style>
 </head>
 
@@ -443,22 +465,31 @@
   </section>
 
   <!-- Content of the Month / src(location of content), alt(content name), srsset(same with src) -->
-  <section class="content-section" role="region" aria-labelledby="content-title">
-    <div class="container text-center">
-      <h3 id="content-title" class="text-primary fw-bold">CONTENT OF THE MONTH</h3>
-      <img
-        src="img/BigMac with wordings.gif" 
-        alt="BigMac stop motion"
-        loading="lazy"
-        width="600"
-        height="auto"
-        srcset="img/BigMac with wordings-400.gif 400w,
-                img/BigMac with wordings-600.gif 600w"
-        sizes="(max-width: 600px) 100vw, 600px"
-        class="rounded-3 shadow"
-      />
+<section class="content-section" role="region" aria-labelledby="content-title">
+  <div class="container text-center">
+    <h3 id="content-title" class="text-primary fw-bold">CONTENT OF THE MONTH</h3>
+    <img
+      src="img/BigMac with wordings.gif" 
+      alt="BigMac stop motion"
+      loading="lazy"
+      width="600"
+      height="auto"
+      srcset="img/BigMac with wordings-400.gif 400w,
+              img/BigMac with wordings-600.gif 600w"
+      sizes="(max-width: 600px) 100vw, 600px"
+      class="rounded-3 shadow"
+    />
+
+    <!-- Gradient Button (centered inside container) -->
+    <div class="mt-4">
+      <a href="bkcontentarchive.html" 
+         class="btn btn-lg px-4 py-2 rounded-pill text-white shadow content-btn">
+         Click for more
+      </a>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Social Media Section -->
   <section class="social-section" role="region" aria-labelledby="social-title">

@@ -218,27 +218,33 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 60%;
   margin: 30px auto;
 }
 
 /* Inner container with responsive scaling */
 .bk-youtube-inner {
   position: center;
-  width: 80%;              /* Adjust this for overall video width */
+  width: 60%;              /* Adjust this for overall video width */
   max-width: 800px;        /* Prevents it from getting too big */
-  aspect-ratio: 16 / 9;    /* Keeps perfect video proportions */
+  aspect-ratio: 4 / 3;    /* Keeps perfect video proportions */
 }
 
 .bk-youtube-inner iframe {
   position: absolute;
   top: 0;
   left: 0;
-  width: 60%;
+  width: 100%;
   height: 100%;
   border-radius: 10px;
 }
-
+/* Responsive adjustment for small screens */
+@media (max-width: 768px) {
+  .bk-youtube-inner {
+    width: 85%;            /* allow more width on mobile */
+    aspect-ratio: 4 / 3;
+  }
+}
 
 
 /* =========================
@@ -764,6 +770,7 @@ if (e.target === modal) modal.style.display = 'none';
 
 </body>
 </html>
+
 
 
 

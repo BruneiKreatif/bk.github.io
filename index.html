@@ -169,35 +169,134 @@ body {
   background: #333;
 }
 
-/* =========================
-   BANNER
-========================= */
-.banner {
+/* ============ BASIC STYLING ============ */
+
+/* Container */
+.intro-container {
   position: relative;
   width: 100%;
   height: 60vh;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.banner img {
-  width: 100%;
+/* Video Styling */
+.intro-container video {
+  width: 50%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
+/* Image Styling */
+.intro-container img {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Center content overlay (optional text/logo) */
+.intro-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   .banner {
-    height: 40vh;
+    height: 50vh;
   }
 }
+
+.bk-youtube {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Main video iframe */
+.bk-youtube iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  border: 0;
+}
+
+/* Fallback thumbnail */
+.bk-fallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.bk-fallback img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  filter: brightness(0.7);
+}
+
+/* Play button overlay */
+.bk-play {
+  font-size: 60px;
+  color: #fff;
+  z-index: 2;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.bk-fallback:hover .bk-play {
+  opacity: 1;
+  transform: scale(1.1);
+}
+.bk-youtube {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.bk-youtube iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  border: 0;
+}
+
+
 
 /* =========================
    HERO SECTION
 ========================= */
 .hero {
   padding: 3rem 10%;
-  text-align: center;
+  text-align: justify;
 }
 
 .hero-text {
@@ -514,10 +613,28 @@ body {
 </div>
 </header>
 
-<section class="banner">
-<img src="img/BK/banner-with-text.png" alt="Brunei Kreatif Banner">
-</section>
 
+<div class="intro-container">
+    <!-- Video Section -->
+    <video id="introVideo" autoplay muted playsinline>
+      <source src="img\bk animation/BK logo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Image Section (hidden until video ends) -->
+    <img id="finalImage" src="img\BK/banner-with-text.png" alt="Welcome Image">
+</div>
+
+  <script>
+    const video = document.getElementById('introVideo');
+    const image = document.getElementById('finalImage');
+
+    // When video ends, hide video and show image
+    video.addEventListener('ended', () => {
+      video.style.display = 'none';
+      image.style.display = 'block';
+    });
+  </script>
 
 <!-- Hero Section -->
 <section class="hero">
@@ -525,24 +642,31 @@ body {
 <p><b><span style="color:#555;">BRUNEI</span><span style="color:#2a2055;">KREATIF</span></b>
 delivers reliable and engaging insights into Brunei’s business landscape. We keep professionals, entrepreneurs, and the wider community informed and inspired with timely updates, in-depth stories, and relevant industry news. Our goal is simple: to connect you with the ideas and people shaping Brunei’s business future.</p>
 
-<a href="./swotnetworkcompany" class="btn contact logo-btn">
-  <img src="img/BK/sncfavicon.png" alt="snclogo" class="btn-logo">
-  Contact Us
-</a>
 
 </div>
 </section>
 
+ <div class="bk-youtube">
+    <!-- YouTube Embed -->
+    <iframe 
+      src="https://www.youtube.com/embed/DIJvTaOpJME" 
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      allowfullscreen>
+    </iframe>
+
+    <!-- Fallback Thumbnail -->
+    <a href="https://www.youtube.com/watch?v=DIJvTaOpJME" 
+       target="_blank" 
+       class="bk-fallback">
+      <img src="https://img.youtube.com/vi/DIJvTaOpJME/hqdefault.jpg" alt="Watch on YouTube">
+      <div class="bk-play">&#9658;</div>
+    </a>
+  </div>
+
+
 <section class="spotlight">
-
-<!-- For youtube video -->
-<!-- <center>
-  
-  <h2>Our Latest Video</h2>
-
-  <iframe width="100%" height="315" src="https://www.youtube.com/embed/-d_iBRRVlVE?si=WQq8X1ebrFAAUZLq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-</center> -->
 
 <br>
 
@@ -550,23 +674,61 @@ delivers reliable and engaging insights into Brunei’s business landscape. We k
 
 <div class="spotlight-grid">
 
+  <div class="spotlight-item">
+      <img src="img\BK/bk-traffic.jpg" alt="Project 9">
+      <h3>City Life in Motion</h3>
+      <p>It highlights active trade among local companies, strengthening corporate ties.</p>
+    </div>
+
+    <div class="spotlight-item">
+      <img src="img\BK/bk-traffic-busy.jpg" alt="Project 8">
+      <h3>The busy flow of vehicles in the city</h3>
+      <p>It highlights the peak hours of growing active and development in the city</p>
+    </div>
+
+    <div class="spotlight-item">
+      <img src="img\BK/bk-mosque.jpg" alt="Project 7">
+      <h3>Historical Buildings in Brunei Darussalam</h3>
+      <p>Tourist attractions for  visitors</p>
+    </div>
+
 <div class="spotlight-item">
-      <img src="img/BK/zumba.jpg" alt="Project 3">
+      <img src="img\BK/bk-bwn1.jpg" alt="Project 6">
+      <h3>Strengthening cooperative networks</h3>
+      <p>SNC works with other companies to promote its products.</p>
+    </div>
+
+    <div class="spotlight-item">
+      <img src="img\BK/bk-bwn2.jpg" alt="Project 5">
+      <h3>Building Partnership for Growth</h3>
+      <p>Sharing the ideas and strengthen connections.</p>
+    </div>
+
+    <div class="spotlight-item">
+      <img src="img\BK/bk-kg-ayer.jpg" alt="Project 4">
+      <h3>Kampong Ayer | The Venice of the Southeast</h3>
+      <p>Vibrant water village of Brunei .</p>
+    </div>
+
+<div class="spotlight-item">
+      <img src="img\BK/zumba.jpg" alt="Project 3">
       <h3>SoulFitness | Zumba</h3>
       <p>We Move The World 2.0 in Pink.</p>
     </div>
 
     <div class="spotlight-item">
-      <img src="img/BK/coffeecon.JPG" alt="Project 2">
+      <img src="img\BK/coffeecon.JPG" alt="Project 2">
       <h3>Coffee Convention 2025</h3>
       <p>Coffee Convention 2025 organized by BigBWN.</p>
     </div>
 
     <div class="spotlight-item">
-      <img src="img/BK/bigmac.gif" alt="Project 1">
+      <img src="img\BK/bigmac.gif" alt="Project 1">
       <h3>Mc Donald's</h3>
       <p>Our featured content and campaigns for August 2025.</p>
     </div>
+
+</div>
 
 </div>
 <a href="spotlight.html" class="see-more">See More</a>
@@ -583,10 +745,6 @@ BRUNEI’S BUSINESS PULSES
 </div>
 </div>
 
-<a href="./swotnetworkcompany" class="btn contact logo-btn">
-  <img src="img/BK/sncfavicon.png" alt="snclogo" class="btn-logo">
-  Contact Us
-</a>
 
 </section>
 

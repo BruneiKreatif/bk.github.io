@@ -169,70 +169,27 @@ body {
   background: #333;
 }
 
-/* ============ BASIC STYLING ============ */
-
-/* Container */
-.intro-container {
+/* =========================
+   BANNER
+========================= */
+.banner {
   position: relative;
   width: 100%;
   height: 60vh;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-/* Image Styling */
-.intro-container img {
-  display: none;
+.banner img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-/* Center content overlay (optional text/logo) */
-.intro-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  display: block;
 }
 
 @media (max-width: 768px) {
   .banner {
-    height: 50vh;
+    height: 40vh;
   }
-}
-/* Tablets & Small Laptops */
-@media (max-width: 1024px) {
-  .intro-container {
-    height: 55vh;
-  }
-
-  .intro-container video {
-    width: 65%;
-  }
-}
-
-/* Mobile Devices */
-@media (max-width: 768px) {
-  .intro-container {
-    height: 45vh;
-  }
-
-  .intro-container img {
-    width: 100%;
-    height: 100%;
-  }
-}
-
-/* Extra Small Phones */
-@media (max-width: 480px) {
-  .intro-container {
-    height: 38vh;
-  }
-
 }
 /* Wrapper to center the video */
 .bk-youtube {
@@ -758,6 +715,7 @@ if (e.target === modal) modal.style.display = 'none';
 
 </body>
 </html>
+
 
 
 

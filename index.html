@@ -171,7 +171,39 @@ body {
 
 /* =========================
 
+/* =========================
+   BANNER (FULLY RESPONSIVE)
+========================= */
+.intro-container {
+  width: 100%;
+  height: auto;
+  max-height: 90vh; /* prevents being too tall on large screens */
+  overflow: hidden;
+  position: relative;
+}
 
+.intro-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* fills the area properly */
+  object-position: center;
+  display: block;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .intro-container {
+    max-height: 60vh;
+  }
+}
+
+/* Mobile */
+@media (max-width: 320px) {
+  .intro-container {
+    max-height: 45vh;   /* adjust to your liking */
+    width: 50% auto;
+  }
+}
 
 /* Wrapper to center the video */
 .bk-youtube {
@@ -697,6 +729,7 @@ if (e.target === modal) modal.style.display = 'none';
 
 </body>
 </html>
+
 
 
 

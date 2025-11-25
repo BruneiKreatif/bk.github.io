@@ -174,7 +174,7 @@ body {
 ========================= */
 .intro-container {
   width: 100%;
-  aspect-ratio: 16 / 9;     /* Ensures perfect shape on all screens */
+  aspect-ratio: 16 / 8.5;     /* Default for large desktop */
   overflow: hidden;
   position: relative;
 }
@@ -182,22 +182,36 @@ body {
 .intro-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover;        /* Fills container without distortion */
-  object-position: center;  /* Keeps middle part always visible */
+  object-fit: cover;
+  object-position: center;
   display: block;
 }
 
-/* Adjust ratio for tablets */
-@media (max-width: 1024px) {
+/* Laptop 1440px and below */
+@media (max-width: 1440px) {
   .intro-container {
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 9;      /* Slightly taller for laptops */
   }
 }
 
-/* Adjust ratio for mobile */
+/* Laptop 1280px and below */
+@media (max-width: 1280px) {
+  .intro-container {
+    aspect-ratio: 16 / 9.5;    /* Balanced height for common laptop screens */
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .intro-container {
+    aspect-ratio: 16 / 10;     /* Taller for tablets */
+  }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
   .intro-container {
-    aspect-ratio: 16 / 12;  /* Taller banner on phones */
+    aspect-ratio: 16 / 12;     /* Even taller for phones */
   }
 }
 
@@ -726,6 +740,7 @@ if (e.target === modal) modal.style.display = 'none';
 
 </body>
 </html>
+
 
 
 

@@ -1,4 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brunei Kreatif | Spotlight</title>
+<!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"> -->
 
+<!-- ✅ Google Font: Montserrat -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Font Awesome for social icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Favicon -->
+<link rel="icon" href="img/BK/bkfavicon.png" type="image/png">
+
+<style>
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  color: #333;
+  background-color: #fff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 75px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #112b5e;
+}
+
+/* Active link underline */
+.nav-links a.active {
+  color: #112b5e;
+  font-weight: 700;
+  position: relative;
+}
+
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 3px;
+  background-color: #112b5e;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+/* ================= BUTTONS ================= */
+.btn {
+  background-color: #000;
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.3s ease;
+}
+
+.btn-logo {
+  width: 20px;
+  height: 20px;
+}
+
+.contact {
+  background: #000;
+  color: white;
+}
+
+.contact:hover {
+  background: #222;
+}
+
+/* ================= BANNER ================= */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ================= HERO ================= */
+.hero {
+  padding: 3rem 10%;
+  text-align: center;
+}
+
+.hero-text {
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.7;
+  font-size: 22px;
+}
+
+.hero .btn {
+  margin-top: 1rem;
+}
+
+/* ================= SPOTLIGHT ================= */
+.spotlight {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.spotlight h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #0b2650;
+  text-align: left;
+}
+
+.spotlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.spotlight-item {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.spotlight-item:hover {
+  transform: translateY(-5px);
+}
+
+.spotlight-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.spotlight-item h3 {
+  font-size: 16px;
+  margin: 10px 0 5px;
+  color: #0b2650;
+}
+
+.spotlight-item p {
+  font-size: 14px;
+  color: #555;
+  padding: 0 10px 15px;
+}
+
+.see-more {
+  display: block;
+  margin: 25px auto;
+  text-align: center;
+  background: #0b2650;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  width: fit-content;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.see-more:hover {
+  background: #243b6b;
+}
+
+/* ================= MODAL ================= */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+.modal span {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+/* ================= SOCIAL ICONS ================= */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-icons a {
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-icons a.default-hover {
+  color: #0b2650;
+}
+
+.social-icons a.default-hover:hover {
+  color: #ffd700;
+}
+
+/* Tooltip styling */
+.social-icons a::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #0b2650;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 12px;
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 1;
+}
+
+.social-icons a:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(5px);
+}
+
+.social-icons a::before {
+  content: '';
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #0b2650 transparent;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+}
+
+.social-icons a:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ================= CTA ================= */
+.cta {
+  text-align: center;
+  padding: 3rem 10%;
+}
+
+.cta h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  background-color: #d9d9d9;
+  padding: 40px 60px;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+}
+
+.footer-logo img {
+  width: 160px;
+}
+
+.footer-about {
+  max-width: 600px;
+}
+
+.footer-about h3,
+.footer-social h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #2a2055;
+}
+
+.footer-about p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: #111;
+  line-height: 1.6;
+}
+
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-social .social-icons a {
+  color: #000;          /* Footer social icons default */
+  font-size: 1.5rem;
+}
+
+.footer-social .social-icons a:hover {
+  color: #1a2a8f;       /* Footer hover fix */
+}
+
+/* ================= SCROLL TEXT ================= */
+.scroll-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.scroll-text {
+  font-family: 'Arial', sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #2a2055;
+  text-align: center;
+  display: inline-block;
+}
+
+.scroll-left {
+  animation: center-bounce-left 6s ease-in-out infinite;
+}
+
+.scroll-right {
+  animation: center-bounce-right 6s ease-in-out infinite;
+}
+
+@keyframes center-bounce-left {
+  0%, 20%, 80%, 100% { transform: translateX(0); }
+  40% { transform: translateX(-60px); }
+  60% { transform: translateX(60px); }
+}
+
+@keyframes center-bounce-right {
+  0%, 20%, 80%, 100% { transform: translateX(0); }
+  40% { transform: translateX(60px); }
+  60% { transform: translateX(-60px); }
+}
+
+/* ================= MEDIA QUERIES ================= */
+@media (max-width: 768px) {
+  .banner { height: 40vh; }
+  .banner h1 { font-size: 1.8rem; }
+
+  .nav-container { flex-direction: column; gap: 1rem; }
+  .nav-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+  .nav-buttons { flex-direction: column; gap: 0.5rem; }
+
+  .scroll-text { font-size: 2rem; }
+}
+
+@media (min-width: 768px) {
+  .footer-container { flex-direction: row; justify-content: space-between; text-align: left; }
+
+  .social-icons img {
+    max-width: 100px;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));
+  }
+}
+
+/* ================= BRAND COLORS ================= */
+.text-grey { color: #b0b0b0; }
+.text-blue { color: #ffffff; }
+</style>
+
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+<div class="container nav-container">
+<div class="logo">
+<a href="index.html"><img src="img/BK/bk-logo_header.png" alt="Brunei Kreatif Logo"></a>
+</div>
+<nav class="nav-links">
+<a href="index.html">Home</a>
+<a href="aboutus.html">About</a>
+<a href="spotlight.html" class="active">Spotlight</a>
+</nav>
+<div class="nav-buttons">
+<a href="./swotnetworkcompany" class="btn contact logo-btn">
+  <img src="img/BK/sncfavicon.png" alt="snclogo" class="btn-logo">
+  Contact Us
 </a>
 </div>
 </div>

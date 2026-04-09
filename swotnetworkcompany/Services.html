@@ -152,7 +152,13 @@
         border-radius: 3px;
         display: block;
     }
-
+@media (max-width: 1024px) {
+    .services-container .service-card:nth-child(7) {
+        grid-column: 1 / -1;
+        justify-self: center;
+        max-width: 500px;
+    }
+}
     .nav-left {
         position: fixed;
         top: 0;

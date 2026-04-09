@@ -325,7 +325,41 @@ p {
         letter-spacing: 0.15px;
     }
 }
+/* MOBILE (up to 768px) */
+@media (max-width: 768px) {
 
+    .about-section {
+        padding: 40px 20px; /* tighter padding for small screens */
+    }
+
+    .content-row {
+        display: flex;
+        flex-direction: column; /* stack elements vertically */
+        gap: 30px;
+    }
+
+    .content-box {
+        width: 100%; /* full width on mobile */
+    }
+
+    h2 {
+        font-size: 26px;
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    p {
+        text-align: left;
+        font-size: 16px;
+        line-height: 1.6;
+        max-width: 100%; /* allow full width */
+        letter-spacing: 0.1px;
+    }
+}
 </style>
 </head>
 
